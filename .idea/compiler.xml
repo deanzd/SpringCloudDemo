@@ -10,6 +10,8 @@
         <module name="service-eureka" />
         <module name="service-feign" />
         <module name="service-ribbon" />
+        <module name="service-zuul" />
+        <module name="service-zuul (1)" />
         <module name="springclouddemo" />
       </profile>
     </annotationProcessing>

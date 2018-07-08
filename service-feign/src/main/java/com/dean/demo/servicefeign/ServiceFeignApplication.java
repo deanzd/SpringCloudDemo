@@ -29,7 +29,7 @@ public class ServiceFeignApplication {
         this.serviceEurekaService = serviceEurekaService;
     }
 
-    @RequestMapping("/hello-eureka")
+    @RequestMapping("/hello")
     public  String sayHelloEureka(@RequestParam("name") String name) {
        return serviceEurekaService.sayHello(name) + ", from feign";
     }
