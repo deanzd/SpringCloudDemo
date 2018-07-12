@@ -6,6 +6,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="config-server" />
         <module name="eureka-server" />
         <module name="service-eureka" />
         <module name="service-feign" />
@@ -15,5 +16,8 @@
         <module name="springclouddemo" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="service-zuul" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
 </project>
