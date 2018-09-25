@@ -4,6 +4,8 @@ import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.client.circuitbreaker.EnableCircuitBreaker;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.cloud.netflix.hystrix.EnableHystrix;
 import org.springframework.cloud.netflix.hystrix.dashboard.EnableHystrixDashboard;
@@ -14,9 +16,11 @@ import org.springframework.web.bind.annotation.RestController;
 
 @SpringBootApplication
 @EnableEurekaClient
+@EnableDiscoveryClient
 @RestController
 @EnableHystrix
 @EnableHystrixDashboard
+@EnableCircuitBreaker
 public class EurekaClientApplication {
 
     public static void main(String[] args) {
@@ -25,11 +29,13 @@ public class EurekaClientApplication {
 
     @Value("${server.port}")
     String port;
+    @Value("${url}")
+    String url;
 
     @RequestMapping("/hello")
     @HystrixCommand(fallbackMethod = "hiError")
     public String hello(@RequestParam("name") String name) {
-        return name + ", my port is " + port;
+        return name + ", my port is " + port + ", eureka url:" + url;
     }
 
     public String hiError(String name) {
