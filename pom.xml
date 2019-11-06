@@ -7,8 +7,8 @@
     <groupId>com.dean.demo</groupId>
     <artifactId>springclouddemo</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <packaging>jar</packaging>
-<!--    <modules>-->
+    <packaging>pom</packaging>
+    <modules>
 <!--        <module>config-server</module>-->
 <!--        <module>eureka-client</module>-->
 <!--        <module>eureka-server</module>-->
@@ -16,6 +16,6 @@
 <!--        <module>service-feign</module>-->
 <!--        <module>service-redis2</module>-->
 <!--        <module>service-zuul</module>-->
-<!--    </modules>-->
+    </modules>
 
 </project>
